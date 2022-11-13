@@ -1,14 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { useEffect } from "react";
+import "./App.css";
+import { getMessagingToken } from "./firebase";
+import logo from "./logo.svg";
 function App() {
+  useEffect(() => {
+    getMessagingToken();
+    const channel = new BroadcastChannel("notifications");
+    const onMessage = (event: any) => {
+      console.log("Receive background", event.data);
+    };
+    channel.addEventListener("message", onMessage);
+    return () => {
+      channel.removeEventListener("message", onMessage);
+      channel.close();
+    };
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit <code> Hieu</code> and save to reload.
         </p>
         <a
           className="App-link"
