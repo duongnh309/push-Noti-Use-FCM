@@ -1,7 +1,7 @@
 //src/firebase-messaging-sw.js
-import { firebaseConfig } from './src/firebase'
+import { firebaseConfigNoti } from './src/firebase'
 if ('serviceWorker' in navigator) {
-    const firebaseConfigParams = new URLSearchParams(firebaseConfig).toString();
+    const firebaseConfigParams = new URLSearchParams(firebaseConfigNoti).toString();
     navigator.serviceWorker
         .register(`../firebase-messaging-sw.js?${firebaseConfigParams}`)
         .then(function (registration) {

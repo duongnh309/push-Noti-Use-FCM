@@ -1,5 +1,5 @@
 //src/constants.ts
-export const firebaseConfig = {
+export const firebaseConfigNoti = {
   apiKey: "AIzaSyAev39elSJGC3C5xNZFwwJ8dt3uKeUMdEE",
   authDomain: "ats-notification-30521.firebaseapp.com",
   projectId: "ats-notification-30521",

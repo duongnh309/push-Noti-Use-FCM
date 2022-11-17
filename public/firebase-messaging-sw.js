@@ -9,7 +9,7 @@ self.addEventListener('fetch', () => {
     // eslint-disable-next-line no-restricted-globals
     const urlParams = new URLSearchParams(location.search);
     // eslint-disable-next-line no-restricted-globals
-    self.firebaseConfig = Object.fromEntries(urlParams);
+    self.firebaseConfigNoti = Object.fromEntries(urlParams);
 });
 
 const defaultConfig = {
@@ -20,7 +20,7 @@ const defaultConfig = {
     measurementId: true,
 };
 // eslint-disable-next-line no-restricted-globals, no-undef
-firebase.initializeApp(self.firebaseConfig || defaultConfig);
+firebase.initializeApp(self.firebaseConfigNoti || defaultConfig);
 // eslint-disable-next-line no-undef
 if (firebase.messaging.isSupported()) {
     // eslint-disable-next-line no-undef

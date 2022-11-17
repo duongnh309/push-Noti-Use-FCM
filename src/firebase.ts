@@ -1,9 +1,9 @@
 import firebase from "firebase/app";
 import "firebase/messaging";
-import { firebaseConfig } from "./constants";
+import { firebaseConfigNoti } from "./constants";
 
 if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfigNoti);
 } else {
   firebase.app(); // if already initialized, use that one
 }
